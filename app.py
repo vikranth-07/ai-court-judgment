@@ -30,15 +30,17 @@ st.markdown("""
 # Load models
 @st.cache_resource
 def load_models():
-    bert_path = "legal_bert_model"
-    t5_path = "t5_summarization_model"
     
+    from transformers import AutoTokenizer, AutoModelForSequenceClassification, T5ForConditionalGeneration
 
-    bert_tokenizer = AutoTokenizer.from_pretrained(bert_path)
-    bert_model = AutoModelForSequenceClassification.from_pretrained(bert_path)
+    bert_tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+    bert_model = AutoModelForSequenceClassification.from_pretrained(
+        "distilbert-base-uncased",
+        num_labels=2
+    )
 
-    t5_tokenizer = AutoTokenizer.from_pretrained(t5_path)
-    t5_model = T5ForConditionalGeneration.from_pretrained(t5_path)
+    t5_tokenizer = AutoTokenizer.from_pretrained("t5-small")
+    t5_model = T5ForConditionalGeneration.from_pretrained("t5-small")
 
     return bert_tokenizer, bert_model, t5_tokenizer, t5_model
 
