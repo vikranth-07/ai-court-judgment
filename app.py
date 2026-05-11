@@ -30,8 +30,9 @@ st.markdown("""
 # Load models
 @st.cache_resource
 def load_models():
-    bert_path = "mandavasaivikranth/legal-bert-model"
-    t5_path = "mandavasaivikranth/t5-summarization-model"
+    bert_path = "legal_bert_model"
+    t5_path = "t5_summarization_model"
+    
 
     bert_tokenizer = AutoTokenizer.from_pretrained(bert_path)
     bert_model = AutoModelForSequenceClassification.from_pretrained(bert_path)
