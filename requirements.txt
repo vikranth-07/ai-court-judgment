@@ -5,3 +5,4 @@ lime
 sentencepiece
 numpy
 pandas
+torchvision
