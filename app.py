@@ -102,6 +102,6 @@ if st.button("🚀 Analyze Judgment"):
 # Footer (YOUR NAME)
 st.markdown("---")
 st.markdown(
-    "<center><h4>👨‍💻Developed by Mandava Sai Vikranth Goud</h4></center>",
+    "<center><h4>👨‍💻 Developed by Mandava Sai Vikranth Goud</h4></center>",
     unsafe_allow_html=True
 )
